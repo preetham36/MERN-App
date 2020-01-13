@@ -4,7 +4,6 @@ import AuthContext from './authContext';
 import authReducer from './authReducer';
 import setAuthToken from '../../utils/setAuthToken';
 
-
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -21,15 +20,15 @@ const AuthState = props => {
         token: localStorage.getItem('token'),
         isAuthenticated: null,
         loading: true,
-        error: null,
         user: null,
+        error: null
     };
 
     const [ state, dispatch ] = useReducer(authReducer, initialState);
     
     // Load User
 
-    const loadUser = () =>  async () => {
+    const loadUser = async () => {
         // Load token into Global headers
         if (localStorage.token) {
             setAuthToken(localStorage.token);
@@ -104,7 +103,7 @@ const AuthState = props => {
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
     return (
-        <AuthContext.Provider value = {{
+        <AuthContext.Provider value={{
             token: state.token,
             isAuthenticated: state.isAuthenticated,
             loading: state.loading,
