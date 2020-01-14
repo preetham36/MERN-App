@@ -24,8 +24,12 @@ const ContactFilter = () => {
     };
     
     return (
-        <form >
-            <input ref={text} type="text" placeholder="Filter..." onChange={onChange} />
+        <form>
+            <h2 className="text-light">Search Movie</h2>
+            <div className="input-container">
+                <div class="input-icon fas fa-search"></div>
+                <input ref={text} type="text" placeholder="Search..." onChange={onChange} className="search_movie" />
+            </div>
         </form>
     )
 }

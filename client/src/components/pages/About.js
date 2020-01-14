@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import ContactForm from '../contacts/ContactForm';
 import AuthContext from '../../context/auth/authContext';
 
@@ -10,19 +10,9 @@ const About = () => {
         // eslint-disable-next-line
     }, []);
     return (
-
-        <div>
+        <Fragment>
             <ContactForm />
-        </div>
-        // <div>
-        //    <h1>About this App</h1>
-        //    <p className="my-1">
-        //        This is a full stack React App for Movie List
-        //    </p>
-        //    <p className="bg-dark p">
-        //        <strong>Version: </strong> 1.0.0
-        //    </p>
-        // </div>
+        </Fragment>
     )
 }
 export default About;

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import Contacts from '../contacts/Contacts';
 import ContactFilter from '../contacts/ContactFilter';
 import AuthContext from '../../context/auth/authContext';
@@ -13,13 +13,10 @@ const Home = () => {
 
 
     return (
-
-        <div className="grid-2">
-           <div>
-               <ContactFilter />
-               <Contacts />
-           </div>
-        </div>
+        <Fragment>
+            <ContactFilter />
+            <div className="grid-3 my-2"><Contacts /></div>
+        </Fragment>
     )
 }
 

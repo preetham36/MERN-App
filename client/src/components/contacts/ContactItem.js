@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
 
-    const contactContext = useContext(ContactContext);
+    // const contactContext = useContext(ContactContext);, useContext
     
-    const { deleteContact, setCurrent, clearCurrent } = contactContext;
+    // const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-    const { id, movie_title, release_date, genre, movie_rating, movie_duration } = contact;
+    const { id, movie_title, release_date, genre, movie_rating, movie_duration, img_url } = contact;
 
     // const onDelete = () => {
     //     deleteContact(id);
@@ -16,36 +16,42 @@ const ContactItem = ({ contact }) => {
     // };
 
     return (
-        <div className="card bg-light">
-            <h3 className="text-primary text-left">
-                {movie_title}{' '}
-                <span style={{float: 'right'}} 
-                    // className={'badge ' + 
-                    // (type === 'professional' ? 'badge-success' : 'badge-primary')}
-                > <i className="fa icon-heart" /> {movie_rating}
-                    {/* {type.charAt(0).toUpperCase() + type.slice(1)} */}
-                </span>
-            </h3>
-            <ul className="list">
-                {genre && (
-                    <li>
-                        <i className="fas"></i> {genre}
-                    </li>
-                )}
-                {release_date && (
-                    <li>
-                        <i className="fas "></i> {release_date}
-                    </li>
-                )}
-                {movie_duration && (
-                    <li>
-                        <i className="fas"></i> {movie_duration}
-                    </li>
-                )}
-            </ul>
-            {/* <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
-            <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button> */}
-        </div>
+        <Fragment>
+            <div className="card">
+            <div>
+                <img src={img_url} />
+                <h3 className="text-light text-left">
+                    {movie_title}{' '}
+                    <span className="text-center"
+                        // className={'badge ' + 
+                        // (type === 'professional' ? 'badge-success' : 'badge-primary')}
+                    > <i className="fas fa-heart" /> {movie_rating}
+                        {/* {type.charAt(0).toUpperCase() + type.slice(1)} */}
+                    </span>
+                </h3>
+                <ul className="list">
+                    {genre && (
+                        <li>
+                            <span className="genre"><i className="fas fa-film"></i> <strong>{genre}</strong> </span>
+                            <span style={{float: 'right'}}><i className="fas fa-clock"></i> <strong>{movie_duration}</strong> </span>
+                        </li>
+                    )}
+                    {release_date && (
+                        <li>
+                            <p className="release_date"><i className="fas fa-calendar"></i> <strong>{release_date}</strong> </p>
+                        </li>
+                    )}
+                    {movie_duration && (
+                        <li>
+                            
+                        </li>
+                    )}
+                </ul>
+                {/* <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
+                <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button> */}
+                </div>
+            </div>
+        </Fragment>
     )
 };
 
