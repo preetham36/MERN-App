@@ -19,7 +19,7 @@ const ContactState = props => {
             {
                 "movie_title": "Avane Srimannarayana (ASN)",
                 "img_url": "https://i.imgur.com/P7dtXaP.jpg",
-                "movie_rating": 9.0,
+                "movie_rating": 9.1,
                 "release_date": "Dec 27 2019",
                 "genre": "Action",
                 "movie_duration": "2h 52m",
@@ -75,7 +75,7 @@ const ContactState = props => {
             {
                 "movie_title": "Avane Srimannarayana (ASN)",
                 "img_url": "https://i.imgur.com/P7dtXaP.jpg",
-                "movie_rating": 9.0,
+                "movie_rating": 9.1,
                 "release_date": "Dec 27 2019",
                 "genre": "Action",
                 "movie_duration": "2h 52m",
