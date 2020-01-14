@@ -8,37 +8,43 @@ const ContactItem = ({ contact }) => {
     
     const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-    const { id, name, email, phone, type } = contact;
+    const { id, movie_title, release_date, genre, movie_rating, movie_duration } = contact;
 
-    const onDelete = () => {
-        deleteContact(id);
-        clearCurrent();
-    };
+    // const onDelete = () => {
+    //     deleteContact(id);
+    //     clearCurrent();
+    // };
 
     return (
         <div className="card bg-light">
             <h3 className="text-primary text-left">
-                {name}{' '}
-                <span style={{float: 'right'}} className={'badge ' + 
-                    (type === 'professional' ? 'badge-success' : 'badge-primary')
-                }>
-                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                {movie_title}{' '}
+                <span style={{float: 'right'}} 
+                    // className={'badge ' + 
+                    // (type === 'professional' ? 'badge-success' : 'badge-primary')}
+                > <i className="fa icon-heart" /> {movie_rating}
+                    {/* {type.charAt(0).toUpperCase() + type.slice(1)} */}
                 </span>
             </h3>
             <ul className="list">
-                {email && (
+                {genre && (
                     <li>
-                        <i className="fas fa-envelope-open"></i> {email}
+                        <i className="fas"></i> {genre}
                     </li>
                 )}
-                {phone && (
+                {release_date && (
                     <li>
-                        <i className="fas fa-phone"></i> {phone}
+                        <i className="fas "></i> {release_date}
+                    </li>
+                )}
+                {movie_duration && (
+                    <li>
+                        <i className="fas"></i> {movie_duration}
                     </li>
                 )}
             </ul>
-            <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
-            <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+            {/* <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
+            <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button> */}
         </div>
     )
 };
