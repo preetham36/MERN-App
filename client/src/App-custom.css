@@ -142,7 +142,7 @@ img {
   background-color: #f06249;
   color: aliceblue;
   font-size: .75rem;
-  padding: 1rem .5rem;
+  padding: .5rem;
   opacity: 0;
   transition: opacity 200ms ease-in;
 }
