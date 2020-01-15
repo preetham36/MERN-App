@@ -59,7 +59,7 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
     title: 'Movie List',
-    icon: 'fa fa-film',
+    // icon: 'fa fa-film',
 };
 
 export default Navbar;

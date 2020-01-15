@@ -49,10 +49,12 @@ const Login = (props) => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email Address</label>
+                    <i className="fas fa-envelope"></i>
                     <input type="email" name="email" value={email} onChange={onChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
+                    <i className="fas fa-unlock-alt"></i>
                     <input type="password" name="password" value={password} onChange={onChange} required />
                 </div>
 
