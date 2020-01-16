@@ -1,9 +1,9 @@
 import React, { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 
-const Navbar = ({ title, icon }) => {
+const Navbar = ({ title, icon, ...history }) => {
 
     const authContext = useContext(AuthContext);
     
@@ -12,7 +12,18 @@ const Navbar = ({ title, icon }) => {
     const onLogout = () => {
         logout();
     }
+    // Guest links page check code
+    const pageCheck = () => {
+            // console.log(history.history.location.pathname);
+            if(history.history.location.pathname !== '/login') {
+               return <li><Link to='/login'>Login</Link></li>
+            } else {
+               return  <li><Link to='/register'>Register</Link></li>
+            }  
+            // return() 
+        };
 
+    // Authentication Navbar links
     const authLinks = (
         <Fragment>
             <li>Hello { user && user.name }</li>
@@ -24,18 +35,13 @@ const Navbar = ({ title, icon }) => {
             </li>
         </Fragment>
     );
-
+    // Guest links code
     const guestsLinks = (
         <Fragment>
-            <li>
-                <Link to='/register'>Register</Link>
-            </li>
-            <li>
-                <Link to='/login'>Login</Link>
-            </li>
+            {pageCheck()}
         </Fragment>
     );
-
+    
     return (
         <div className="navbar bg-dark">
             <h1><i className={icon} />{title}</h1>
@@ -62,4 +68,4 @@ Navbar.defaultProps = {
     // icon: 'fa fa-film',
 };
 
-export default Navbar;
+export default  withRouter(Navbar);

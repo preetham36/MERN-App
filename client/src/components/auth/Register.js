@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
@@ -80,4 +81,4 @@ const Register = props => {
 }
 
 
-export default Register;
+export default withRouter(Register);

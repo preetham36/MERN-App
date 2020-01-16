@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
@@ -9,6 +10,7 @@ const Login = (props) => {
     const { setAlert } = alertContext;
     const { login, error, clearErrors, isAuthenticated } = authContext;
 
+    // console.log(props);
 
     useEffect(() => {
         if(isAuthenticated){
@@ -65,4 +67,4 @@ const Login = (props) => {
 }
 
 
-export default Login;
+export default withRouter(Login);

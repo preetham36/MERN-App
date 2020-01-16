@@ -146,7 +146,7 @@ img {
   transition: all 200ms ease-in;
 }
 .card:hover > div img{
-  transform: scale(1.01);
+  transform: scale(1.03);
   transition: all 200ms ease-in;
 }
 
@@ -499,6 +499,9 @@ button {
 .navbar h1{
   position: relative;
   padding-left: 35px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 .navbar h1:before {
   content: '';
@@ -509,7 +512,7 @@ button {
   right:0;
   /* opacity: .3; */
   background: url('./images/google-play-movie.svg') left center no-repeat;
-  background-size: 20%;
+  background-size: 17%;
   z-index: -1;
 }
 
