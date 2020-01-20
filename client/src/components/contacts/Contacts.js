@@ -6,6 +6,8 @@ import ContactContext from '../../context/contact/contactContext';
 const Contacts = () => {
     const contactContext = useContext(ContactContext);
     const { contacts, filtered } = contactContext;
+    // console.log("filtered", filtered);
+    // console.log("movies", contacts)
     if(contacts.length === 0){
         return <h4>Please add a Movie List</h4>
     }
@@ -13,14 +15,14 @@ const Contacts = () => {
         <Fragment>
             <TransitionGroup>
             {filtered !== null 
-            ? filtered.map(contact => (
-                <CSSTransition key={contact.id} timeout={500} classNames="item">
-                    <ContactItem contact={contact} />
+            ? filtered.map((movie ,i)=> (
+                <CSSTransition key={i} timeout={500} classNames="item">
+                    <ContactItem contact={movie} />
                 </CSSTransition>
             )) 
-            : contacts.map(contact => (
-                <CSSTransition key={contact.id} timeout={500} classNames="item">
-                    <ContactItem contact={contact} />
+            : contacts.map((movie ,i) => (
+                <CSSTransition key={i} timeout={500} classNames="item">
+                    <ContactItem contact={movie} />
                 </CSSTransition>
             ))}
             </TransitionGroup>

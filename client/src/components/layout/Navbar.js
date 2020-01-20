@@ -14,7 +14,7 @@ const Navbar = ({ title, icon, ...history }) => {
     }
     // Guest links page check code
     const pageCheck = () => {
-            // console.log(history.history.location.pathname);
+            // console.log(history.history.location.pathname); <li><Link to='/login' >Login</Link></li>
             if(history.history.location.pathname !== '/login') {
                return <li><Link to='/login'>Login</Link></li>
             } else {
@@ -39,6 +39,8 @@ const Navbar = ({ title, icon, ...history }) => {
     const guestsLinks = (
         <Fragment>
             {pageCheck()}
+            {/* <li><Link to='/register'>Register</Link></li>
+            <li><Link to='/login'>Login</Link></li> */}
         </Fragment>
     );
     
